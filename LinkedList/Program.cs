@@ -57,16 +57,6 @@ while (true)
             insertmethod.display();
             Console.WriteLine("\n");
             break;
-        case 5:
-            LLMethods<int> deletemethod = new();
-            deletemethod.AddNodeToFront(56);
-            deletemethod.AddNodeToFront(30);
-            deletemethod.AddNodeToFront(70);
-            deletemethod.display();
-            deletemethod.Pop(56);
-            deletemethod.display();
-            break;
-
 
         default:
             Console.WriteLine("please choose correct option!");
