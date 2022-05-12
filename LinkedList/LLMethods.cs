@@ -178,7 +178,19 @@ namespace LinkedList
             return found;
         }
 
-
+        public int DeleteBetween(int searchvalue)
+        {
+            int found = 0;
+            Node<T> temp = head, previous = null;
+            while (temp != null && !temp.data.Equals(searchvalue))
+            {
+                previous = temp;
+                temp = temp.next;
+            }
+            found = 1;
+            previous.next = temp.next;
+            return found;
+        }
         public void display()
         {
             Node<T> temp = head;

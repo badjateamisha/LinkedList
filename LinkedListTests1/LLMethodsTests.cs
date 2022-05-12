@@ -32,5 +32,15 @@ namespace LinkedList.Tests
             lLMethods.InsertAfter30(30, 40);
             Assert.AreEqual(1, lLMethods.InsertAfter30(30, 40));
         }
+        [TestMethod()]
+        public void DeleteBetweenTest()
+        {
+            LLMethods<int> lLMethods = new();
+            lLMethods.AddNodeToFront(70);
+            lLMethods.AddNodeToFront(30);
+            lLMethods.AddNodeToFront(40);
+            lLMethods.AddNodeToFront(56);
+            Assert.AreEqual(1, lLMethods.DeleteBetween(30));
+        }
     }
 }
