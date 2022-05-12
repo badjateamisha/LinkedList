@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    public class LLMethods<T>
+    public class LLMethods<T> where T : IComparable
     {
         public int count = 0;
         public Node<T> head;
@@ -112,6 +112,7 @@ namespace LinkedList
             // Change next of second last
             second_last.next = null;
         }
+
         public bool SearchMethod(int searchposition)
         {
             Node<T> temp = head;
@@ -148,6 +149,7 @@ namespace LinkedList
             }
             return status;
         }
+
         public int InsertAfter30(int searchValue, T newElement)
         {
             Node<T> temp = head;
@@ -186,11 +188,36 @@ namespace LinkedList
             {
                 previous = temp;
                 temp = temp.next;
+                count--;
             }
             found = 1;
             previous.next = temp.next;
             return found;
         }
+
+        public void SortedInsert(T data)
+        {
+            Node<T> current;
+            Node<T> newnode = new Node<T>(data);
+
+            if (head == null || (head.data.CompareTo(newnode.data) >= 0))
+            {
+                newnode.next = head;
+                head = newnode;
+            }
+            else
+            {
+                current = head;
+
+                while (current.next != null && (current.next.data.CompareTo(newnode.data)) < 0)
+                    current = current.next;
+
+                newnode.next = current.next;
+                current.next = newnode;
+            }
+
+        }
+
         public void display()
         {
             Node<T> temp = head;
