@@ -9,7 +9,7 @@ namespace LinkedList
     public class LLMethods<T>
     {
         public int count = 0;
-        Node<T> head;
+        public Node<T> head;
 
 
         public void AddNodeToFront(T data)
