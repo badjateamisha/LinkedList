@@ -83,7 +83,7 @@ namespace LinkedList
             }
         }
 
-        public void Pop(T data)
+        public void Pop()
         {
             Node<T> tempnode = head;
             if (head != null)
@@ -92,6 +92,7 @@ namespace LinkedList
                 head = head.next;
                 tempnode = null;
             }
+            count--;
 
         }
 
@@ -106,3 +107,4 @@ namespace LinkedList
         }
     }
 }
+
